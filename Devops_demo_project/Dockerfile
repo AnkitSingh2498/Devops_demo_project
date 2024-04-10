@@ -11,6 +11,7 @@ COPY ["Devops_demo_project.csproj", "Devops_demo_project/"]
 RUN dotnet restore "Devops_demo_project/Devops_demo_project.csproj"
 COPY . .
 WORKDIR "/src/Devops_demo_project"
+RUN ls 
 RUN dotnet build "Devops_demo_project.csproj" -c Release -o /app/build
 
 FROM build AS publish
